@@ -24,10 +24,16 @@ class User extends Authenticatable
         'password',
     ];
 
-
+    // one to one
     public function profile()
     {
         return $this->hasOne(Profile::class);
+    }
+
+    // one to many
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
     }
 
     /**
