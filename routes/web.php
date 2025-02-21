@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Models\Comment;
 use App\Models\Post;
 use App\Models\Profile;
 use App\Models\Role;
 use App\Models\User;
+use App\Models\Video;
 use Illuminate\Support\Facades\Route;
 
 
@@ -105,6 +107,45 @@ use Illuminate\Support\Facades\Route;
     // Delete a User (Cascade will remove from Pivot Table)
     // $user->delete();
 
+    // Polymorphic Relationship
+    Route::get('/',function(){
+        // Get All Comments for a Post
+        // $post = Post::find(3);
+        // foreach ($post->comments as $comment) {
+        //     echo $comment->body . "<br>";
+        // }
+        // Get All Comments for a Video
+        // $video = Video::find(1);
+        // foreach ($video->comments as $comment) {
+        //     echo $comment->body . "<br>";
+        // }
+        // Get the Parent of a Comment (Post or Video)
+        // $comment = Comment::find(1);
+        // echo $comment->commentable->title; // Works for both posts and videos
+
+        // Step 5: Insert Data with Relationship
+            // Create a Comment for a Post
+        // $post = Post::find(1);
+        // $post->comments()->create(['body' => 'Nice post!']);
+
+        // Create a Comment for a Video
+        // $video = Video::find(1);
+        // $video->comments()->create(['body' => 'Awesome video!']);
+
+        // Update & Delete
+        // $comment = Comment::find(1);
+        // $comment->body = 'Updated Comment';
+        // $comment->save();
+
+        // Delete a Comment
+        // $comment->delete();
+
+        // Delete a Post or Video (Cascade will delete comments)
+        // $post->delete();  // Deletes post and its comments
+        // $video->delete(); // Deletes video and its comments
+
+
+    });
 
 
 // });
