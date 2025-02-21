@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Models\Post;
 use App\Models\Profile;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -63,6 +64,51 @@ use Illuminate\Support\Facades\Route;
 
 
 // });
+
+// Many to Many
+// Route::get('/',function(){
+    // Get All Roles of a User
+    // $user = User::find(8);
+    // foreach ($user->roles as $role) {
+    //     echo $role->name . "<br>";
+    // }
+    // Get All Users of a Role
+    // $role = Role::find(1);
+    // foreach ($role->users as $user) {
+    //     echo $user->name . "<br>";
+    // }
+    // Attach a Role to a User
+    // $user = User::find(9);
+    // $user->roles()->attach(2); // Adds Role ID 2 to the user
+    // foreach($user->roles as $role) 
+    // {
+    //     echo $role->name ."<br>";
+    // }
+    // Detach a Role from a User
+    // $user = User::find(9);
+    // $user->roles()->detach(2);  // Removes Role ID 2 from the user
+    //   foreach($user->roles as $role) 
+    // {
+    //     echo $role->name ."<br>";
+    // }
+    // Sync (Attach & Remove Roles)
+    // $user->roles()->sync([1, 3]);
+
+    // Update & Delete
+    // $role = Role::find(1);
+    // $role->name = 'Super Admin';
+    // $role->save();
+
+    // Delete a Role (Removes from Pivot Table Too)
+    // $role->delete();
+
+    // Delete a User (Cascade will remove from Pivot Table)
+    // $user->delete();
+
+
+
+// });
+    
 
 Route::get('/dashboard', function () {
     return view('dashboard');
