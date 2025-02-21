@@ -5,6 +5,8 @@
 
    
    // Get the profile of a user:
+
+   
     $user = User::find(1);
     
     echo $user->profile->bio ."<br>";
